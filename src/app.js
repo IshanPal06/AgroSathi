@@ -1,6 +1,11 @@
 const express = require("express");
 const cors = require("cors");
+
 const authRoutes = require("./routes/authRoutes");
+const farmRoutes = require("./routes/farmRoutes");
+const cropRoutes = require("./routes/cropRoutes");
+const soilRoutes = require("./routes/soilRoutes");
+const weatherRoutes = require("./routes/weatherRoutes");
 
 const app = express()
 
@@ -15,5 +20,9 @@ app.get("/api/health", (req, res) =>{
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/farms", farmRoutes);
+app.use("/api/crops", cropRoutes);
+app.use("/api/soil", soilRoutes);
+app.use("/api/weather", weatherRoutes);
 
 module.exports = app;
