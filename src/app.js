@@ -6,6 +6,9 @@ const farmRoutes = require("./routes/farmRoutes");
 const cropRoutes = require("./routes/cropRoutes");
 const soilRoutes = require("./routes/soilRoutes");
 const weatherRoutes = require("./routes/weatherRoutes");
+const diseaseRoutes = require("./routes/diseaseRoutes");
+const recommendationRoutes = require("./routes/recommendationRoutes");
+const marketRoutes = require("./routes/marketRoutes");
 
 const app = express()
 
@@ -24,5 +27,11 @@ app.use("/api/farms", farmRoutes);
 app.use("/api/crops", cropRoutes);
 app.use("/api/soil", soilRoutes);
 app.use("/api/weather", weatherRoutes);
+app.use("/api/disease", diseaseRoutes);
+app.use(
+    "/api/recommendations",
+    recommendationRoutes
+);
+app.use("/api/market", marketRoutes);
 
 module.exports = app;
